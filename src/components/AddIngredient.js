@@ -43,7 +43,7 @@ export default function AddIngredient({ addItem }) {
         required
       ></input>
       <div className="dropdown-units">
-        <label for="units"></label>
+        <label htmlFor="units"></label>
         <select name="units" id="units" value={units} onChange={handleUnits}>
           <option value="unit-type">Unit Type</option>
           <option value="n/a">n/a</option>
@@ -63,7 +63,10 @@ export default function AddIngredient({ addItem }) {
         onChange={handleIngredient}
         required
       ></input>
-      <button type="submit" class="add-btn btn btn-outline-secondary btn-sm">
+      <button
+        type="submit"
+        className="add-btn btn btn-outline-secondary btn-sm"
+      >
         {" "}
         Add{" "}
       </button>

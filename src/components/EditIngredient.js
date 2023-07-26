@@ -21,7 +21,7 @@ export default function EditIngredient({ id, editText }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const plural_adjusted = quantity == 1 ? units : units + "s";
+    const plural_adjusted = quantity === 1 ? units : units + "s";
 
     const units_adjusted =
       units === "n/a" || units === "unit-type" ? " " : plural_adjusted + " of ";

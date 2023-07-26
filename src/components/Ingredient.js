@@ -10,7 +10,7 @@ export const Ingredient = ({ ingredient, deleteItem, editItem }) => {
   };
 
   return (
-    <div class="ingredient">
+    <div className="ingredient">
       <input
         className="checkbox form-check-input"
         type="checkbox"
@@ -18,7 +18,7 @@ export const Ingredient = ({ ingredient, deleteItem, editItem }) => {
         id="check"
         onClick={markComplete}
       />
-      <label className="checkbox-label" for="check">
+      <label className="checkbox-label" htmlFor="check">
         <p
           style={{
             textDecoration: isComplete ? "line-through" : "none",

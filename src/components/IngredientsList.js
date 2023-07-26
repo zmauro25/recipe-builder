@@ -4,8 +4,6 @@ import { Ingredient } from "./Ingredient";
 import EditIngredient from "./EditIngredient";
 import { v4 as uuid } from "uuid";
 
-// hello testing!
-
 export default function IngredientsList() {
   const [ingredients, setIngredients] = useState([]);
 
@@ -54,9 +52,75 @@ export default function IngredientsList() {
     );
   };
 
-  const handleHalve = () => {};
+  const handleHalve = () => {
+    const newIngredients = [];
 
-  const handleDouble = () => {};
+    for (let i = 0; i < ingredients.length; i++) {
+      const newQuantStr = (ingredients[i].quant / 2).toFixed(1);
+
+      console.log(newQuantStr);
+
+      const newQuant = parseFloat(newQuantStr);
+
+      console.log(newQuant);
+
+      const plural_adjusted =
+        newQuant === 1 ? ingredients[i].units : ingredients[i].units + "s";
+
+      const units_adjusted =
+        ingredients[i].units === "n/a" || ingredients[i].units === "unit-type"
+          ? " "
+          : plural_adjusted + " of ";
+
+      const newText =
+        newQuantStr + " " + units_adjusted + ingredients[i].ingredient;
+
+      const newIngredient = {
+        ...ingredients[i],
+        quant: newQuant,
+        text: newText,
+      };
+
+      newIngredients.push(newIngredient);
+    }
+
+    setIngredients(newIngredients);
+  };
+
+  const handleDouble = () => {
+    const newIngredients = [];
+
+    for (let i = 0; i < ingredients.length; i++) {
+      const newQuantStr = (ingredients[i].quant * 2).toFixed(1);
+
+      console.log(newQuantStr);
+
+      const newQuant = parseFloat(newQuantStr);
+
+      console.log(newQuant);
+
+      const plural_adjusted =
+        newQuant === 1 ? ingredients[i].units : ingredients[i].units + "s";
+
+      const units_adjusted =
+        ingredients[i].units === "n/a" || ingredients[i].units === "unit-type"
+          ? " "
+          : plural_adjusted + " of ";
+
+      const newText =
+        newQuantStr + " " + units_adjusted + ingredients[i].ingredient;
+
+      const newIngredient = {
+        ...ingredients[i],
+        quant: newQuant,
+        text: newText,
+      };
+
+      newIngredients.push(newIngredient);
+    }
+
+    setIngredients(newIngredients);
+  };
 
   return (
     <div className="recipe-app">
@@ -65,7 +129,7 @@ export default function IngredientsList() {
         <form onSubmit={handleHalve}>
           <button
             type="submit"
-            class="halve-btn btn btn-outline-secondary btn-sm"
+            className="halve-btn btn btn-outline-secondary btn-sm"
           >
             {" "}
             Halve my Recipe!{" "}
@@ -74,7 +138,7 @@ export default function IngredientsList() {
         <form onSubmit={handleDouble}>
           <button
             type="submit"
-            class="double-btn btn btn-outline-secondary btn-sm"
+            className="double-btn btn btn-outline-secondary btn-sm"
           >
             {" "}
             Double my Recipe!{" "}

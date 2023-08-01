@@ -1,16 +1,17 @@
 :root {
-  --background: #f2e9e4;
-  --text: #22223b;
-  --accent: #c9ada7;
+  --backdrop: #f8feff;
+  --background: #fff;
+  --text: #000;
+  --accent: #515151;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: var(--background);
+  background: var(--backdrop);
   color: var(--text);
-  font-family: Trebuchet MS;
+  font-family: IBM Plex Mono;
 }
 
 .recipe-app {
@@ -29,18 +30,23 @@ h1 {
   align-items: stretch;
   align-content: stretch;
   justify-content: center;
+  gap: 60px;
+  background: var(--background);
 }
 
 .halve-btn,
 .double-btn {
   border: 2px solid var(--text);
   margin: 0 10px;
+  background: var(--background);
+  width: 55px;
+  height: 35px;
 }
 
 .list {
   padding: 25px 25px 30px 25px;
   margin-bottom: 25px;
-  background: var(--accent);
+  background: var(--background);
   border-radius: 10px;
   border: 1px solid var(--text);
   display: flex;
@@ -76,7 +82,7 @@ h1 {
 .add-ingredient {
   display: flex;
   flex-direction: row;
-  background: var(--accent);
+  background: var(--background);
 }
 
 .ingredient {

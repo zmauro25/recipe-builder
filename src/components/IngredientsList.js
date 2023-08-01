@@ -92,7 +92,7 @@ export default function IngredientsList() {
 
   return (
     <div className="recipe-app">
-      <h1 className="my-recipe">My Recipe</h1>
+      <h1 className="my-recipe">MY RECIPE</h1>
       <div className="magic-buttons">
         <button
           type="submit"
@@ -100,7 +100,7 @@ export default function IngredientsList() {
           onClick={() => handleChange(0.5)}
         >
           {" "}
-          Halve my Recipe!{" "}
+          1/2{" "}
         </button>
         <button
           type="submit"
@@ -108,7 +108,7 @@ export default function IngredientsList() {
           onClick={() => handleChange(2)}
         >
           {" "}
-          Double my Recipe!{" "}
+          2x{" "}
         </button>
       </div>
       <div className="list">
